@@ -9,7 +9,8 @@ index = {"binarize_mask": "00_mask_transform.ipynb",
          "check_outpath": "00_mask_transform.ipynb",
          "create_outpath": "00_mask_transform.ipynb",
          "savingpath": "00_mask_transform.ipynb",
-         "mask_transform": "00_mask_transform.ipynb"}
+         "mask_transform": "00_mask_transform.ipynb",
+         "nifti_binarizer": "00_mask_transform.ipynb"}
 
 modules = ["mask_transform.py"]
 
