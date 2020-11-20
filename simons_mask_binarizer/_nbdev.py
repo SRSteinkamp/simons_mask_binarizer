@@ -16,6 +16,6 @@ modules = ["mask_transform.py"]
 
 doc_url = "https://SRSteinkamp.github.io/simons_mask_binarizer/"
 
-git_url = "https://github.com/SRSteinkamp/simons_mask_binarizer/tree/master/"
+git_url = "https://github.com/SRSteinkamp/simons_mask_binarizer/tree/main/"
 
 def custom_doc_links(name): return None
