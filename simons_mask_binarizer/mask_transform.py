@@ -13,16 +13,27 @@ import argparse
 
 # Cell
 def binarize_mask(input_image):
-    transform_formula = '((i == 255) * 1).astype(np.uint8)'
+    '''
+    Main function for creating nifti image.
+
+    Takes a nifti image, binarizes it and transforms to uint8 and outputs a new image.
+    '''
+    transform_formula = '((i > 0) * 1).astype(np.uint8)'
     out_image = image.math_img(transform_formula, i=input_image)
     return out_image
 
 # Cell
 def data_loader(inpath):
+    '''
+    Loads a nifti image at `inpath` using nibabel.
+    '''
     return nb.load(inpath)
 
 # Cell
 def data_saver(nifti, outpath):
+    '''
+    Tries to save nifti using nibabel, if fails returns False.
+    '''
     try:
         nb.save(nifti, outpath)
         return True
@@ -31,6 +42,9 @@ def data_saver(nifti, outpath):
 
 # Cell
 def outpath_from_inpath(inpath):
+    '''
+    Returns the directories name.
+    '''
     image_dir = os.path.dirname(inpath)
     return image_dir
 

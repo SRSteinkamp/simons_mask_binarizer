@@ -31,7 +31,8 @@ nb_path: "index.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This file will become your README and also the index of your documentation.</p>
+<p>Not well tested, but should work in most cases. Test of the CLI were only performed on WIN10, so there might be some issues popping up.</p>
+<p>Please post an issue, if there is something not working as expected.</p>
 
 </div>
 </div>
@@ -44,9 +45,11 @@ nb_path: "index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Not yet tested, but should work :)</p>
-<p>As always I would recommned, to create a new python environment for this tool!</p>
-<p><code>pip install git+https://github.com/SRSteinkamp/simons_mask_binarizer.git</code></p>
+<p>As always I would recommend, creating a new python environment for this tool!</p>
+<p>You can then install the package via pip from Github.</p>
+<div class="highlight"><pre><span></span>pip install git+https://github.com/SRSteinkamp/simons_mask_binarizer.git
+</pre></div>
+<p>The installation should install all the necessary packages namely (<code>nilearn</code> and <code>nibabel</code>) and expose the command line tool below.</p>
 
 </div>
 </div>
@@ -62,13 +65,22 @@ nb_path: "index.ipynb"
 <p>Currently exposes a CLI directly, to transform single files. In your terminal run:</p>
 <p><code>nifti_binarizer INPUTPATH -o OUTPUTPATH -p PREFIX</code></p>
 <p>Where the INPUTPATH (path of the image to be converted) has to be provided.</p>
-<p>The</p>
 <ul>
 <li><p><code>-o</code> or <code>--outputpath</code> argument is optional to provide the destination of the converted image. Defualt image is converted inside <code>INPUTPATH</code> folder.</p>
 </li>
-<li><p><code>-p</code> or <code>--prefix</code> argument is optional, prefixes to</p>
+<li><p><code>-p</code> or <code>--prefix</code> argument is optional, prefix defaults to <code>bin_</code>.</p>
 </li>
 </ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span>nifti_binarizer C:<span class="se">\s</span>ome_folder<span class="se">\m</span>y_mask.nii.gz<span class="sb">`</span>
+</pre></div>
+<p>Creates a new file named as <code>C:\some_folder\bin_my_mask.nii.gz</code>.</p>
+<div class="highlight"><pre><span></span>nifti_binarizer C:<span class="se">\s</span>ome_folder<span class="se">\m</span>y_mask.nii.gz -o C:<span class="se">\o</span>ther_folder<span class="se">\`</span>
+</pre></div>
+<p>Creates a new file in <code>C:\other_folder\bin_my_mask.nii.gz</code>.</p>
+<div class="highlight"><pre><span></span>nifti_binarizer C:<span class="se">\s</span>ome_folder<span class="se">\m</span>y_mask.nii.gz -o C:<span class="se">\o</span>ther_folder<span class="se">\ </span>-p <span class="s1">&#39;p&#39;</span><span class="sb">`</span>
+</pre></div>
+<p>Creates a new file in <code>C:\other_folder\pmy_mask.nii.gz</code>.</p>
 
 </div>
 </div>
